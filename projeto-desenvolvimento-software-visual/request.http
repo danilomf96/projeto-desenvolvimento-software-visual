@@ -1,0 +1,99 @@
+### Requisição para a raiz da API
+GET http://localhost:5043
+
+### Listar Empresa
+GET http://localhost:5043/empresa/listar
+
+### Buscar Empresa
+GET http://localhost:5043/empresa/buscar/1
+
+### Cadastrar Empresa
+POST http://localhost:5043/empresa/cadastrar/
+Content-Type: application/json
+
+{
+    "Id" : "2",
+    "Nome" : "Twitter",
+    "Cnpj" : "333-111",
+    "Endereco" : "rua armando penaltas"
+}
+
+### Alterar Empresa
+PUT http://localhost:5043/empresa/alterar/2
+Content-Type: application/json
+
+{
+    "Nome": "Empresa Modificada",
+    "Cnpj": "3333-33",
+    "Endereco": "butiatuvinha"
+}
+
+### Deletar Empresa
+DELETE http://localhost:5043/empresa/deletar/1
+
+// ------------------------------------------------------ //
+### Listar Servico
+GET http://localhost:5043/servico/listar
+
+### Buscar Empresa
+GET http://localhost:5043/servico/buscar/1
+
+### Cadastrar Empresa
+POST http://localhost:5043/servico/cadastrar/
+Content-Type: application/json
+
+{
+    "Id" : "2",
+    "Nome" : "Twitter",
+    "TipoServico" : "333-111",
+    "Valor" : "rua armando penaltas",
+    "DataContratacao" : "12/02"
+}
+
+### Alterar Empresa
+PUT http://localhost:5043/servico/alterar/2
+Content-Type: application/json
+
+{
+    "Nome": "Empresa Modificada",
+    "Cnpj": "3333-33",
+    "Endereco": "butiatuvinha"
+}
+
+### Deletar Empresa
+DELETE http://localhost:5043/servico/deletar/1
+
+// ------------------------------------------------------ //
+### Listar Funcionario
+
+GET http://localhost:5043/funcionario/listar
+
+### Buscar Empresa
+GET http://localhost:5043/funcionario/buscar/1
+
+### Cadastrar Empresa
+POST http://localhost:5043/funcionario/cadastrar/
+Content-Type: application/json
+
+{
+    "Id" : "2",
+    "Nome" : "Jonathan",
+    "Cargo" : "Mecanico",
+    "Contato" : "inta 22"
+}
+
+### Alterar Empresa
+PUT http://localhost:5043/funcionario/alterar/2
+Content-Type: application/json
+
+{
+     "Id" : "5",
+    "Nome" : "Maicon",
+    "Cargo" : "Encanador",
+    "Contato" : "Zap 42"
+}
+
+### Deletar Empresa
+DELETE http://localhost:5043/funcionario/deletar/1
+
+
