@@ -13,5 +13,6 @@ namespace projeto_desenvolvimento_software_visual.Models
         public string? Nome { get; set; }
         public string? Cargo { get; set; }
         public string? Contato { get; set; }
+
     }
 }
