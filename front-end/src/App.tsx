@@ -1,5 +1,5 @@
 import Home from './components/Home';
-import ListarFuncionarios from './components/ListarFuncionarios';
+import ListarFuncionarios from './components/Listar';
 
 function App() {
   return (

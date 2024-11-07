@@ -12,7 +12,7 @@ function ListarFuncionarios() {
   useEffect(() => {
     consultarFuncionarios();
     consultarEmpresas();
-    consultarServisos();
+    consultarServicos();
   }, []);
 
   function consultarFuncionarios() {
@@ -33,11 +33,11 @@ function ListarFuncionarios() {
       });
   }
 
-  function consultarServisos() {
+  function consultarServicos() {
     fetch("http://localhost:5043/servico/listar")
       .then((resposta) => resposta.json())
       .then((servicos) => {
-        setEmpresas(servicos);
+        setServicos(servicos);
         console.table(servicos);
       });
   }
@@ -92,7 +92,7 @@ function ListarFuncionarios() {
         </table>
       </div>
 
-      <div id="listar-empresa">
+      <div id="listar-servico">
         <h1>Serviços</h1>
         <table>
           <thead>
@@ -104,12 +104,12 @@ function ListarFuncionarios() {
             </tr>
           </thead>
           <tbody>
-            {empresas.map((empresa) => (
+            {servicos.map((servico) => (
               <tr>
-                <td>{empresa.id}</td>
-                <td>{empresa.nome}</td>
-                <td>{empresa.cnpj}</td>
-                <td>{empresa.endereco}</td>
+                <td>{servico.id}</td>
+                <td>{servico.TipoServico}</td>
+                <td>{servico.valor}</td>
+                <td>{servico.DataContratacao}</td>
               </tr>
             ))}
           </tbody>

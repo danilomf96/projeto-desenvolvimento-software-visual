@@ -1,7 +1,7 @@
 export interface Servico {
     id?: string;
-    tipodeservico: string;
+    TipoServico: string;
     valor: string;
-    datacontratacao: string;
+    DataContratacao: string;
   }
   

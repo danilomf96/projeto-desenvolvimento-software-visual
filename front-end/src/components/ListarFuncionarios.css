@@ -1,3 +1,4 @@
+/* Estilos globais */
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +11,8 @@
     color: #333;
   }
   
-  #listar-funcionarios, #listar-empresa, #listar-servicos {
+  /* Container principal para as tabelas */
+  #listar-funcionarios, #listar-empresa, #listar-servico {
     width: 90%;
     max-width: 1000px;
     margin: 30px auto;
@@ -27,6 +29,7 @@
     color: #4a90e2;
   }
   
+  /* Estilo da tabela */
   table {
     width: 100%;
     border-collapse: collapse;
@@ -51,6 +54,7 @@
     color: #666;
   }
   
+  /* Alternando cores de fundo nas linhas */
   tbody tr:nth-child(even) {
     background-color: #f9fafb;
   }
@@ -60,13 +64,15 @@
     cursor: pointer;
   }
   
+  /* Melhorando as bordas e espaçamento */
   td:first-child {
     font-weight: bold;
     color: #333;
   }
-
+  
+  /* Responsividade */
   @media (max-width: 768px) {
-    #listar-funcionarios, #listar-empresa, #listar-servicos {
+    #listar-funcionarios, #listar-empresa, #listar-servico {
       padding: 20px;
     }
   
@@ -93,7 +99,7 @@
       padding: 8px;
     }
     
-    #listar-funcionarios, #listar-empresa, #listar-servicos {
+    #listar-funcionarios, #listar-empresa, #listar-servico {
       margin: 10px;
     }
   }
