@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  #listar-funcionarios, #listar-empresa, #listar-servicos {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    color: #4a90e2;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th,
+  td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #e0e0e0;
+    font-size: 1rem;
+  }
+  
+  th {
+    background-color: #f4f7fc;
+    color: #4a90e2;
+    font-weight: bold;
+  }
+  
+  td {
+    color: #666;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+  }
+  
+  tbody tr:hover {
+    background-color: #f1f9fe;
+    cursor: pointer;
+  }
+  
+  td:first-child {
+    font-weight: bold;
+    color: #333;
+  }
+
+  @media (max-width: 768px) {
+    #listar-funcionarios, #listar-empresa, #listar-servicos {
+      padding: 20px;
+    }
+  
+    table {
+      width: 100%;
+      font-size: 0.9rem;
+    }
+  
+    th, td {
+      padding: 10px;
+    }
+  
+    td {
+      word-wrap: break-word;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.4rem;
+    }
+    
+    td, th {
+      padding: 8px;
+    }
+    
+    #listar-funcionarios, #listar-empresa, #listar-servicos {
+      margin: 10px;
+    }
+  }
+  

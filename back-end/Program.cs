@@ -4,6 +4,13 @@ using projeto_desenvolvimento_software_visual.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDataContext>();
+builder.Services.AddCors(
+    options => options.AddPolicy("Acesso Total",
+    configs => configs
+        .AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod())
+);
 var app = builder.Build();
 
 // Lista de Empresas
@@ -228,4 +235,6 @@ app.MapDelete("/servico/deletar/{id}", ([FromRoute] int id, [FromServices] AppDa
     ctx.SaveChanges();
     return Results.Ok(new { message = $"Serviço com Id {id} removido com sucesso!" });
 });
+
+app.UseCors("Acesso Total");
 app.Run();
