@@ -1,14 +1,16 @@
+@base_url = http://localhost:5043
+
 ### Requisição para a raiz da API
 GET http://localhost:5043
 
 ### Listar Empresa
-GET http://localhost:5043/empresa/listar
+GET {{base_url}}/empresa/listar
 
 ### Buscar Empresa
-GET http://localhost:5043/empresa/buscar/3
+GET {{base_url}}/empresa/buscar/3
 
 ### Cadastrar Empresa
-POST http://localhost:5043/empresa/cadastrar/
+POST {{base_url}}/empresa/cadastrar/
 Content-Type: application/json
 
 {
@@ -18,7 +20,7 @@ Content-Type: application/json
 }
 
 ### Alterar Empresa
-PUT http://localhost:5043/empresa/alterar/11
+PUT {{base_url}}/empresa/alterar/11
 Content-Type: application/json
 
 {
@@ -28,17 +30,17 @@ Content-Type: application/json
 }
 
 ### Deletar Empresa
-DELETE http://localhost:5043/empresa/deletar/10
+DELETE {{base_url}}/empresa/deletar/9
 
 // ------------------------------------------------------ //
 ### Listar Serviço
-GET http://localhost:5043/servico/listar
+GET {{base_url}}/servico/listar
 
 ### Buscar Serviço
-GET http://localhost:5043/servico/buscar/2
+GET {{base_url}}/servico/buscar/2
 
 ### Cadastrar Serviço
-POST http://localhost:5043/servico/cadastrar/
+POST {{base_url}}/servico/cadastrar/
 Content-Type: application/json
 
 {
@@ -50,7 +52,7 @@ Content-Type: application/json
 }
 
 ### Alterar Serviço
-PUT http://localhost:5043/servico/alterar/11
+PUT {{base_url}}/servico/alterar/11
 Content-Type: application/json
 
 {
@@ -60,18 +62,18 @@ Content-Type: application/json
 }
 
 ### Deletar Serviço
-DELETE http://localhost:5043/servico/deletar/10
+DELETE {{base_url}}/servico/deletar/10
 
 // ------------------------------------------------------ //
 ### Listar Funcionario
 
-GET http://localhost:5043/funcionario/listar
+GET {{base_url}}/funcionario/listar
 
 ### Buscar Funcionario
-GET http://localhost:5043/funcionario/buscar/1
+GET {{base_url}}/funcionario/buscar/1
 
 ### Cadastrar Funcionario
-POST http://localhost:5043/funcionario/cadastrar/
+POST {{base_url}}/funcionario/cadastrar/
 Content-Type: application/json
 
 {
@@ -81,7 +83,7 @@ Content-Type: application/json
 }
 
 ### Alterar Funcionario
-PUT http://localhost:5043/funcionario/alterar/2
+PUT {{base_url}}/funcionario/alterar/2
 Content-Type: application/json
 
 {
@@ -91,6 +93,6 @@ Content-Type: application/json
 }
 
 ### Deletar Funcionario
-DELETE http://localhost:5043/funcionario/deletar/1
+DELETE {{base_url}}/funcionario/deletar/1
 
 
