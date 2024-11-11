@@ -4,7 +4,7 @@ import "./Css/Listar.css";
 import { Empresa } from "../models/Empresa";
 import { Servico } from "../models/Servico";
 
-function ListarFuncionarios() {
+function Listar() {
   const [funcionarios, setFuncionarios] = useState<Funcionario[]>([]);
   const [empresas, setEmpresas] = useState<Empresa[]>([]);
   const [servicos, setServicos] = useState<Servico[]>([]);
@@ -143,4 +143,4 @@ function ListarFuncionarios() {
   );
 }
 
-export default ListarFuncionarios;
+export default Listar;

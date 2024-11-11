@@ -1,0 +1,152 @@
+/* Estilo para a classe principal */
+.App {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Estilo para o container da Home */
+.Home {
+    text-align: center;
+    margin-top: 40px; /* Adiciona uma margem superior para dar um espaçamento adequado */
+}
+
+/* Estilo do h1 */
+.Home h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px; /* Margem inferior para dar espaçamento ao conteúdo abaixo */
+}
+
+/* Estilo do nav e links */
+nav {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #4CAF50;
+    color: white;
+    transform: scale(1.1);
+}
+
+nav ul li a:active {
+    transform: scale(1);
+}
+
+/* Estilo da tabela */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+td {
+    background-color: #fafafa;
+    color: #555;
+}
+
+td:hover {
+    background-color: #f0f0f0;
+}
+
+/* Adicionando uma borda redonda para os links ativos */
+nav ul li a.active {
+    background-color: #007bff;
+    color: white;
+    border-radius: 6px;
+}
+
+/* Melhorando a aparência do formulário */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+form label {
+    display: block;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Adicionando efeitos de transição */
+nav ul li a {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
