@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Funcionario } from "../models/Funcionario";
-import "./ListarFuncionarios.css";
+import "./Css/Listar.css";
 import { Empresa } from "../models/Empresa";
 import { Servico } from "../models/Servico";
 
@@ -17,35 +17,59 @@ function ListarFuncionarios() {
 
   function consultarFuncionarios() {
     fetch("http://localhost:5043/funcionario/listar")
-      .then((resposta) => resposta.json())
+      .then((resposta) => {
+        if (!resposta.ok) {
+          throw new Error("Erro na requisição dos funcionários");
+        }
+        return resposta.json();
+      })
       .then((funcionarios) => {
         setFuncionarios(funcionarios);
         console.table(funcionarios);
+      })
+      .catch((erro) => {
+        console.error(erro);
       });
   }
 
   function consultarEmpresas() {
     fetch("http://localhost:5043/empresa/listar")
-      .then((resposta) => resposta.json())
+      .then((resposta) => {
+        if (!resposta.ok) {
+          throw new Error("Erro na requisição das empresas");
+        }
+        return resposta.json();
+      })
       .then((empresas) => {
         setEmpresas(empresas);
         console.table(empresas);
+      })
+      .catch((erro) => {
+        console.error(erro);
       });
   }
 
   function consultarServicos() {
     fetch("http://localhost:5043/servico/listar")
-      .then((resposta) => resposta.json())
+      .then((resposta) => {
+        if (!resposta.ok) {
+          throw new Error("Erro na requisição dos funcionários");
+        }
+        return resposta.json();
+      })
       .then((servicos) => {
         setServicos(servicos);
         console.table(servicos);
+      })
+      .catch((erro) => {
+        console.error(erro);
       });
   }
 
   return (
     <>
       <div id="listar-funcionarios">
-        <h1>Fúncionarios</h1>
+        <h1>Funcionários</h1>
         <table>
           <thead>
             <tr>
@@ -57,7 +81,7 @@ function ListarFuncionarios() {
           </thead>
           <tbody>
             {funcionarios.map((funcionario) => (
-              <tr>
+              <tr key={funcionario.id}>
                 <td>{funcionario.id}</td>
                 <td>{funcionario.nome}</td>
                 <td>{funcionario.cargo}</td>
@@ -81,7 +105,7 @@ function ListarFuncionarios() {
           </thead>
           <tbody>
             {empresas.map((empresa) => (
-              <tr>
+              <tr key={empresa.id}>
                 <td>{empresa.id}</td>
                 <td>{empresa.nome}</td>
                 <td>{empresa.cnpj}</td>
@@ -105,7 +129,7 @@ function ListarFuncionarios() {
           </thead>
           <tbody>
             {servicos.map((servico) => (
-              <tr>
+              <tr key={servico.id}>
                 <td>{servico.id}</td>
                 <td>{servico.TipoServico}</td>
                 <td>{servico.valor}</td>
