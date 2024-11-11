@@ -14,7 +14,8 @@ namespace projeto_desenvolvimento_software_visual.Migrations
                 name: "Empresas",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Cnpj = table.Column<string>(type: "TEXT", nullable: true),
                     Endereco = table.Column<string>(type: "TEXT", nullable: true)
@@ -28,7 +29,8 @@ namespace projeto_desenvolvimento_software_visual.Migrations
                 name: "Funcionarios",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Cargo = table.Column<string>(type: "TEXT", nullable: true),
                     Contato = table.Column<string>(type: "TEXT", nullable: true)
@@ -42,12 +44,13 @@ namespace projeto_desenvolvimento_software_visual.Migrations
                 name: "Servicos",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     TipoServico = table.Column<string>(type: "TEXT", nullable: true),
                     Valor = table.Column<string>(type: "TEXT", nullable: true),
                     DataContratacao = table.Column<string>(type: "TEXT", nullable: true),
-                    FuncionarioResponsavelId = table.Column<string>(type: "TEXT", nullable: true),
-                    EmpresaClienteId = table.Column<string>(type: "TEXT", nullable: true)
+                    FuncionarioResponsavelId = table.Column<int>(type: "INTEGER", nullable: true),
+                    EmpresaClienteId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {

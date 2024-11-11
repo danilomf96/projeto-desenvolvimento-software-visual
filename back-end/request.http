@@ -7,7 +7,7 @@ GET http://localhost:5043
 GET {{base_url}}/empresa/listar
 
 ### Buscar Empresa
-GET {{base_url}}/empresa/buscar/3
+GET {{base_url}}/empresa/buscar/1
 
 ### Cadastrar Empresa
 POST {{base_url}}/empresa/cadastrar/
@@ -20,7 +20,7 @@ Content-Type: application/json
 }
 
 ### Alterar Empresa
-PUT {{base_url}}/empresa/alterar/11
+PUT {{base_url}}/empresa/alterar/1
 Content-Type: application/json
 
 {

@@ -11,8 +11,8 @@ using projeto_desenvolvimento_software_visual.Models;
 namespace projeto_desenvolvimento_software_visual.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    [Migration("20241014195542_NovaMigration")]
-    partial class NovaMigration
+    [Migration("20241111182033_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
