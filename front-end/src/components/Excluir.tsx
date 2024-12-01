@@ -3,8 +3,9 @@ import { Funcionario } from "../models/Funcionario";
 import "./Css/Listar.css";
 import { Empresa } from "../models/Empresa";
 import { Servico } from "../models/Servico";
+import { useParams } from "react-router-dom";
 
-function Listar() {
+function Excluir() {
 	const [funcionarios, setFuncionarios] = useState<Funcionario[]>([]);
 	const [empresas, setEmpresas] = useState<Empresa[]>([]);
 	const [servicos, setServicos] = useState<Servico[]>([]);
@@ -62,7 +63,7 @@ function Listar() {
 		fetch("http://localhost:5043/servico/listar")
 			.then((resposta) => {
 				if (!resposta.ok) {
-					throw new Error("Erro na requisição dos Servicos");
+					throw new Error("Erro na requisição dos serviços");
 				}
 				return resposta.json();
 			})
@@ -73,6 +74,69 @@ function Listar() {
 			.catch((erro) => {
 				console.error(erro);
 			});
+	}
+
+	// Função para excluir um funcionário
+	function excluirFuncionario(id: number | undefined) {
+		if (id !== undefined) {
+			fetch(`http://localhost:5043/funcionario/excluir/${id}`, {
+				method: "DELETE",
+			})
+				.then((resposta) => {
+					if (!resposta.ok) {
+						throw new Error("Erro ao excluir funcionário");
+					}
+					setFuncionarios((prevFuncionarios) =>
+						prevFuncionarios.filter((funcionario) => funcionario.id !== id)
+					);
+					console.log("Funcionário excluído com sucesso");
+				})
+				.catch((erro) => {
+					console.error(erro);
+				});
+		}
+	}
+
+	// Função para excluir uma empresa
+	function excluirEmpresa(id: number | undefined) {
+		if (id !== undefined) {
+			fetch(`http://localhost:5043/empresa/excluir/${id}`, {
+				method: "DELETE",
+			})
+				.then((resposta) => {
+					if (!resposta.ok) {
+						throw new Error("Erro ao excluir empresa");
+					}
+					setEmpresas((prevEmpresas) =>
+						prevEmpresas.filter((empresa) => empresa.id !== id)
+					);
+					console.log("Empresa excluída com sucesso");
+				})
+				.catch((erro) => {
+					console.error(erro);
+				});
+		}
+	}
+
+	// Função para excluir um serviço
+	function excluirServico(id: number | undefined) {
+		if (id !== undefined) {
+			fetch(`http://localhost:5043/servico/excluir/${id}`, {
+				method: "DELETE",
+			})
+				.then((resposta) => {
+					if (!resposta.ok) {
+						throw new Error("Erro ao excluir serviço");
+					}
+					setServicos((prevServicos) =>
+						prevServicos.filter((servico) => servico.id !== id)
+					);
+					console.log("Serviço excluído com sucesso");
+				})
+				.catch((erro) => {
+					console.error(erro);
+				});
+		}
 	}
 
 	return (
@@ -86,6 +150,7 @@ function Listar() {
 							<th>Nome</th>
 							<th>Cargo</th>
 							<th>Contato</th>
+							<th>Excluir</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -95,6 +160,13 @@ function Listar() {
 								<td>{funcionario.nome}</td>
 								<td>{funcionario.cargo}</td>
 								<td>{funcionario.contato}</td>
+								<td>
+									<button
+										type="button"
+										onClick={() => excluirFuncionario(funcionario.id)}>
+										Excluir
+									</button>
+								</td>
 							</tr>
 						))}
 					</tbody>
@@ -111,6 +183,7 @@ function Listar() {
 							<th>Cnpj</th>
 							<th>Endereço</th>
 							<th>Valor Total</th>
+							<th>Excluir</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -121,6 +194,13 @@ function Listar() {
 								<td>{empresa.cnpj}</td>
 								<td>{empresa.endereco}</td>
 								<td>R$ {calcularTotalServicos(empresa).toFixed(2)}</td>
+								<td>
+									<button
+										type="button"
+										onClick={() => excluirEmpresa(empresa.id)}>
+										Excluir
+									</button>
+								</td>
 							</tr>
 						))}
 					</tbody>
@@ -135,6 +215,7 @@ function Listar() {
 							<th>#</th>
 							<th>Tipo</th>
 							<th>Valor</th>
+							<th>Excluir</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -143,6 +224,13 @@ function Listar() {
 								<td>{servico.id}</td>
 								<td>{servico.TipoServico}</td>
 								<td>{servico.valor}</td>
+								<td>
+									<button
+										type="button"
+										onClick={() => excluirServico(servico.id)}>
+										Excluir
+									</button>
+								</td>
 							</tr>
 						))}
 					</tbody>
@@ -152,4 +240,4 @@ function Listar() {
 	);
 }
 
-export default Listar;
+export default Excluir;

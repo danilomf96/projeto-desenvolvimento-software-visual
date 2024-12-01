@@ -10,7 +10,6 @@ namespace projeto_desenvolvimento_software_visual.Models
         public string? DataContratacao { get; set; }
 
         public Funcionario? FuncionarioResponsavel { get; set; }
-
         public Empresa? EmpresaCliente { get; set; }
     }
 }
